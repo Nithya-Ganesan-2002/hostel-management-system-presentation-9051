@@ -4,7 +4,7 @@ Getting started:
 
 - `pnpm install`
 - `pnpm dev`
-- visit <http://localhost:3000>
+- visit <http://localhost:3030>
 
 Edit the [slides.md](./slides.md) to see changes.
 

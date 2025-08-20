@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
-    "dev": "slidev --remote --port 3000",
+    "dev": "PORT=${PORT:-3030} slidev --remote --port $PORT",
     "export": "slidev export",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore . || true",
-    "lint:fix": "eslint --ext .js,.ts,.vue --ignore-path .gitignore . --fix || true"
+    "lint": "bash ./scripts/lint-proxy.sh",
+    "lint:fix": "eslint --no-cache --ext .js,.ts,.vue --ignore-path .gitignore . --fix || true",
+    "lint:ci": "eslint --no-cache --no-error-on-unmatched-pattern --ext .js,.ts,.vue --ignore-path .gitignore . || true"
   },
   "dependencies": {
     "@slidev/cli": "^51.4.0",

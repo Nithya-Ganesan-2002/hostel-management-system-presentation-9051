@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "cd slidev_frontend && npm run dev",
     "build": "cd slidev_frontend && npm run build",
-    "lint": "cd slidev_frontend && npm run lint || true",
-    "lint:fix": "cd slidev_frontend && npm run lint:fix || true"
+    "lint": "bash ./scripts/lint-ci.sh",
+    "lint:fix": "cd slidev_frontend && npm run lint:fix || true",
+    "lint:ci": "bash ./scripts/lint-ci.sh",
+    "ci": "bash ./scripts/lint-ci.sh"
   }
 }

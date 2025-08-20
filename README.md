@@ -13,5 +13,8 @@ Run locally:
 - `pnpm dev`
 - visit http://localhost:3030
 
+Notes:
+- You can override the port by setting the PORT environment variable, e.g. `PORT=3000 pnpm dev`. Ensure the port is free.
+
 Deployment:
 - Netlify/Vercel configs are provided.

@@ -1,0 +1,6 @@
+# Ensure deterministic lint ignores in CI
+node_modules
+dist
+.cache
+.output
+**/*.min.js
