@@ -1,42 +1,27 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true,
-    es2021: true,
+  env: { browser: true, es2021: true, node: true },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2021,
+    sourceType: 'module',
   },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    'prettier',
   ],
-  parser: 'vue-eslint-parser',
-  parserOptions: {
-    ecmaVersion: 2021,
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
-  },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {
-    'vue/multi-word-component-names': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/no-v-html': 'off',
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-  },
   ignorePatterns: [
     'dist',
     'node_modules',
-    '*.d.ts',
+    '*.lock',
+    '*.css',
   ],
-  overrides: [
-    {
-      files: ['*.md'],
-      parser: 'markdown-eslint-parser',
-      extends: ['plugin:markdown/recommended'],
-    },
-  ],
+  rules: {
+    'vue/multi-word-component-names': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
 };

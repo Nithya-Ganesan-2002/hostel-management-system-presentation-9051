@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+import { spawn } from 'node:child_process';
+
+const cmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+const child = spawn(cmd, ['run', 'lint'], {
+  stdio: 'inherit',
+  cwd: new URL('.', import.meta.url).pathname,
+  env: process.env,
+});
+
+child.on('exit', (code) => {
+  process.exit(code ?? 0);
+});
